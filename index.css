@@ -1,0 +1,317 @@
+:root {
+  --black: #333;
+  --white: #fff;
+  --gray: #676767;
+  --light-gray: #ccc;
+  --light-blue: #03A9F4;
+  --green: #4CAF50;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  background-color: var(--light-blue);
+  font: 400 normal 16px/1.3 sans-serif;
+  color: var(--black);
+  transition: opacity .2s ease;
+}
+
+.app--ready {
+  opacity: 1;
+}
+
+.app * {
+  box-sizing: border-box;
+}
+
+.form {
+  width: 480px;
+  border-radius: 2px;
+  background-color: var(--white);
+}
+
+.form__heading {
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.form__content {
+  position: relative;
+  padding: 20px;
+}
+
+.form__wrapper {
+  overflow: hidden;
+}
+
+.form__inner {
+  display: inline-flex;
+  align-items: flex-start;
+  transition-property: transform, height;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+.form__step {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.form__step--active {
+  opacity: 1;
+}
+
+.form__submit-lock {
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--gray);
+}
+
+.form__submit-lock--unlocked {
+  display: none;
+}
+
+.button.form__submit {
+  display: none;
+}
+
+.button.form__submit--unlocked {
+  display: block;
+}
+
+.show_banner {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.form__banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  z-index: 2;
+  visibility: hidden; 
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.form__banner--visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.form__banner::before {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  content: '';
+}
+
+.form__banner-inner {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  border: 1px solid var(--light-gray);
+  border-radius: 2px;
+  opacity: 0;
+  transform: translate(0, 5%);
+  background-color: var(--white);
+  transition-property: opacity, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+.form__banner--visible .form__banner-inner {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.form__banner-text {
+  padding-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 6px;
+}
+
+.button {
+  display: block;
+  padding: 14px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  font: 400 normal 16px/1 sans-serif;
+  color: var(--white);
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.button:hover {
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.button--primary {
+  background-color: var(--green);
+}
+
+.button--secondary {
+  background-color: var(--light-gray);
+}
+
+
+.fieldgroup {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+}
+
+.field__label,
+.field__caption {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+label.field__label {
+  display: block;
+}
+
+.field__caption {
+  color: var(--gray);
+}
+
+.field__input {
+  margin-top: 4px;
+}
+
+.fieldgroup {
+  display: flex;
+  justify-content: stretch;
+}
+
+.fieldgroup .field {
+  flex: 1;
+  padding-bottom: 0;
+}
+
+.fieldgroup .field:not(:last-child) {
+  margin-right: 20px;
+}
+
+.field:not(:last-child),
+.fieldgroup:not(:last-child) {
+  padding-bottom: 14px;
+}
+
+.fieldgroup .field:not(:last-child) {
+  padding-bottom: 0;
+}
+
+.input {
+  display: block;
+  width: 100%;
+}
+
+.input[type="text"],
+.input[type="date"],
+.input[type="time"],
+.input[type="email"],
+textarea.input {
+  padding: 6px;
+  border: 1px solid var(--light-gray);
+  outline: none;
+  border-radius: 2px;
+  font: 400 normal 16px/1 sans-serif;
+  transition: border-color 0.2s ease;
+}
+
+.input[type="text"]:focus,
+.input[type="date"]:focus,
+.input[type="time"]:focus,
+.input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--black);
+}
+
+textarea.input {
+  height: 50px;
+  resize: none;
+}
+
+.select {
+  display: block;
+  width: 100%;
+}
+
+.visual-select {
+  display: flex;
+  justify-content: space-between;
+}
+
+.visual-select__option {
+  position: relative;
+  cursor: pointer;
+}
+
+.visual-select__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96px;
+  height: 96px;
+  border: 1px solid var(--light-gray);
+  border-radius: 2px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, .05);
+  background-color: var(--white);
+  font-size: 38px;
+  line-height: 1;
+  transition-property: border, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+.visual-select__label {
+  margin-top: 4px;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.visual-select__input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.visual-select__input:checked ~ .visual-select__icon {
+  border-color: var(--light-blue);
+  box-shadow: inset 0 0 20px -12px var(--light-blue);
+}
+
+.visual-select__input:checked ~ .visual-select__label {
+  color: var(--light-blue);
+}
+
+/* Мне данный класс не пригодился */
+/* 
+.radiogroup {
+  
+} */

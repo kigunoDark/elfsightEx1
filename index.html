@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="app">
+    <form class="form" action="/echo/html" method="POST">
+      <div class="form__heading">🚘 Car Rental Pasadena, CA</div>
+      <div class="form__content">
+        <div class="form__banner">
+          <div class="form__banner-inner">
+            <div class="form__banner-text">
+              The car rental request has been successfilly sent.<br />Our manager will contact you ASAP.<br />Thank you
+              for choosing us!
+            </div>
+
+            <div class="actions">
+              <button class="form__reset button button--primary" type="button">OK</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form__wrapper">
+          <div class="form__container">
+            <div class="form__inner">
+              <div class="form__step">
+                <div class="field">
+                  <div class="field__caption">
+                    Fill out the following form to get the best car rental deal in Pasadena.
+                  </div>
+                </div>
+
+                <!-- Car Type -->
+                <div class="field">
+                  <div class="field__label">Car Type</div>
+                  <div class="field__input">
+                    <div class="visual-select">
+                      <label class="visual-select__option">
+                        <input class="visual-select__input" type="radio" name="carType" value="standard" checked />
+                        <div class="visual-select__icon">🏎️</div>
+                        <div class="visual-select__label">Standard</div>
+                      </label>
+
+                      <label class="visual-select__option">
+                        <input class="visual-select__input" type="radio" name="carType" value="sport" />
+                        <div class="visual-select__icon">🚗</div>
+                        <div class="visual-select__label">Sport</div>
+                      </label>
+
+                      <label class="visual-select__option">
+                        <input class="visual-select__input" type="radio" name="carType" value="van" />
+                        <div class="visual-select__icon">🚐</div>
+                        <div class="visual-select__label">Van</div>
+                      </label>
+
+                      <label class="visual-select__option">
+                        <input class="visual-select__input" type="radio" name="carType" value="eco" />
+                        <div class="visual-select__icon">🌿</div>
+                        <div class="visual-select__label">Eco</div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- / Car Type -->
+
+                <!-- Pick-up -->
+                <div class="fieldgroup">
+                  <div class="field">
+                    <label for="formFieldPickupDate" class="field__label">Pick-up Date *</label>
+                    <div class="field__input">
+                      <input class="input" id="formFieldPickupDate" type="date" name="dropoffDate" required>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="formFieldPickupTime" class="field__label">Pick-up Time *</label>
+                    <div class="field__input">
+                      <input class="input" id="formFieldPickupTime" type="time" name="pickupTime" required>
+                    </div>
+                  </div>
+                </div>
+                <!-- / Pick-up -->
+
+                <!-- Drop-off -->
+                <div class="fieldgroup">
+                  <div class="field">
+                    <label for="formFieldDropoffDate" class="field__label">Drop-off Date *</label>
+                    <div class="field__input">
+                      <input class="input" id="formFieldDropoffDate" type="date" name="pickupDate" required>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="formFieldDropoffTime" class="field__label">Drop-off Time *</label>
+                    <div class="field__input">
+                      <input class="input" id="formFieldDropoffTime" type="time" name="dropoffTime" required>
+                    </div>
+                  </div>
+                </div>
+                <!-- / Drop-off -->
+
+                <div class="actions">
+                  <button class="button button--primary" type="button" data-change-step="1">Continue</button>
+                </div>
+              </div>
+
+
+              <div class="form__step">
+                <div class="fieldgroup">
+                  <!-- First Name -->
+                  <div class="field">
+                    <label for="formFieldFirstName" class="field__label">First Name *</label>
+                    <div class="field__input">
+                      <input class="input" id="formFieldFirstName" type="text" name="lastName" autocomplete="off"
+                        required>
+                    </div>
+                  </div>
+                  <!-- / First Name -->
+
+                  <!-- Last Name -->
+                  <div class="field">
+                    <label for="formFieldLastName" class="field__label">Last Name *</label>
+                    <div class="field__input">
+                      <input class="input" id="formFieldLastName" type="text" name="lastName" autocomplete="off"
+                        required>
+                    </div>
+                  </div>
+                  <!-- / Last Name -->
+                </div>
+
+                <!-- Email -->
+                <div class="field">
+                  <label for="formFieldPhone" class="field__label">Email *</label>
+                  <div class="field__input">
+                    <input class="input" id="formFieldEmail" type="email" name="email" autocomplete="off" required>
+                  </div>
+                </div>
+                <!-- / Email -->
+
+                <!-- Phone -->
+                <div class="field">
+                  <label for="formFieldPhone" class="field__label">Phone *</label>
+                  <div class="field__input">
+                    <input class="input" id="formFieldPhone" type="text" name="phone" autocomplete="off" required>
+                  </div>
+                </div>
+                <!-- / Phone -->
+
+                <!-- Additional Requests -->
+                <div class="field">
+                  <label for="formFieldAdditionalRequests" class="field__label">Additional Requests</label>
+                  <div class="field__input">
+                    <textarea name="additionalRequests" id="formFieldAdditionalRequests" class="input"></textarea>
+                  </div>
+                </div>
+                <!-- / Additional Requests -->
+
+                <div class="fieldgroup">
+                  <div class="field__label">Are you robot?</div>
+                  <div class="field__input">
+                    <input type="checkbox" class="g-recaptcha" data-sitekey="6LeFMPYUAAAAAFK3xukuIClbBunH_o-Rpg8O6MXG"
+                      data-callback="__handleRecaptchaCallback" data-expired-callback="__handleRecaptchaExpireCallback">
+                  </div>
+                </div>
+
+                <div class="actions">
+                  <div class="form__submit-lock">Prove you aren't a robot, please.</div>
+                  <button class="form__submit button button--primary" type="submit">Rent a car</button>
+                  <button class="button button--secondary" type="button" data-change-step="0">Back</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="./index.js"></script>
+</body>
+
+</html>
