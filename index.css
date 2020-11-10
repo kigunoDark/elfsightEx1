@@ -321,9 +321,6 @@ textarea.input {
   
 } */
 
-
-
-
 @media (max-width: 900px) {
   .visual-select {
     display: flex;
@@ -334,7 +331,6 @@ textarea.input {
 
   .visual-select div {
     margin: 10px 5px;
-    /* flex-basis: 61%; */
   }
   .app {
     background-color: var(--white);
